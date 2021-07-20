@@ -22,14 +22,14 @@ public interface AdminService {
      * 注册功能
      */
     Admin register(Admin admin);
-//
-//    /**
-//     * 登录功能
-//     * @param username 用户名
-//     * @param password 密码
-//     * @return 生成的JWT的token
-//     */
-//    String login(String username,String password);
+
+    /**
+     * 登录功能
+     * @param username 用户名
+     * @param password 密码
+     * @return 生成的JWT的token
+     */
+    String login(String username,String password);
 //
 //    /**
 //     * 刷新token的功能

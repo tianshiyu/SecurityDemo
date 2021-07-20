@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<Permission> getPermissionList(long id) {
-        return null;
+        return new ArrayList<>();
     }
 
     @Override
@@ -33,5 +34,10 @@ public class AdminServiceImpl implements AdminService {
         admin.setPassword(passwordEncoder.encode(admin.getPassword()));
         VirtualUser.virtualUser.put(admin.getUsername(), admin);
         return admin;
+    }
+
+    @Override
+    public String login(String username, String password) {
+        return null;
     }
 }
