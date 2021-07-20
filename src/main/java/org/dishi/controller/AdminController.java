@@ -21,7 +21,10 @@ public class AdminController {
 
     @PostMapping("login")
     public ServerResponse<String> login(@RequestBody Admin admin){
-        adminService.login(admin.getUsername(), admin.getPassword());
-        return ServerResponse.createBySuccessMessage("登录成功");
+        String token = adminService.login(admin.getUsername(), admin.getPassword());
+        if(token==null){
+            return ServerResponse.createByErrorMessage("用户名或密码错误");
+        }
+        return ServerResponse.createBySuccess("登录成功", token);
     }
 }

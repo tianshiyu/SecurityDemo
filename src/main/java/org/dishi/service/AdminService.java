@@ -16,7 +16,7 @@ public interface AdminService {
      */
     Admin getAdminByUsername(String username);
 
-    List<Permission> getPermissionList(long id);
+    List<Permission> getPermissionList(String name);
 
     /**
      * 注册功能
